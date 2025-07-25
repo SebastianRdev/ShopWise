@@ -1,15 +1,24 @@
 {
-    "users":[
-        {
-            "id":"j041",
-            "username":"jesus",
-            "password":"contraseña"
-        },
-        {
-            "id":"h14d",
-            "username":"pepito",
-            "password":"pepito123"
-        }
-    ],
-    "categorias":[]
+  "users": [
+    {
+      "id": "j041",
+      "username": "jesus",
+      "password": "contraseña"
+    },
+    {
+      "id": "h14d",
+      "username": "pepito",
+      "password": "pepito123"
+    }
+  ],
+  "categories": [
+    {
+      "nombre": "Electronicas",
+      "id": "m021"
+    },
+    {
+      "id": "1289",
+      "nombre": "Familia"
+    }
+  ]
 }

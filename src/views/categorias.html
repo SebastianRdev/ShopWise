@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./../../public/icons/favicon.png" type="image/png">
     <link rel="stylesheet" href="./../../src/CSS/style.css">
     <title>Categorías | ShopWise</title>
 </head>
 <body>
+
     <header>
+
         <nav class="nav-categorias">
             <div class="nav-izquierda">
                 <a href="dashboard.html" class="icono-volver-container">
@@ -37,31 +40,29 @@
                 <h2>Elegir Categoria</h2>
                 <form id="formulario">
                     <label>Nombre de la categoria</label>
-                    <input type="text" id="nombre-categoria">
-                </form>
+                    <input type="text" id="nombre-categoria" required>
                 
-                <div class="botones-elegir-categoria">
-                    <button type="submit" id="btn-agregar-categoria">Agregar</button>
-                    <button type="submit" id="btn-actualizar-categoria">Actualizar</button>
-                </div>
+                    <div class="botones-elegir-categoria">
+                        <button type="submit" class="btn-agregar-categoria">Agregar</button>
+                        <button type="submit" class="btn-actualizar-categoria">Actualizar</button>
+                    </div>
+                </form>
                 
             </div>
 
             <div class="lista-categorias">
                 <h2>Categorías Registradas</h2>
 
-                <article class="tarjetas-categorias">
-                    <div class="tarjeta">
-                        <h3>Categoria</h3>
-                        <p>descripcion</p>
-                        <button class="btn-eliminar-categoria">Eliminar</button>
-                        <button class="btn-editar-categoria">Editar</button>
-                    </div>
+                <article class="tarjetas-categorias" id="tarjetas-categorias">
+                    <!-- Las tarjetas de categorías se generarán dinámicamente aquí -->
                 </article>
 
             </div>
 
         </section>
+
     </main>
+
+    <script type="module" src="./../js/categorias.js"></script>
 </body>
 </html>
