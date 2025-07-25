@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../CSS/style.css">
+    <title>LogIn | ShopWise</title>
+</head>
+<body>
+    <main>
+        <div class="contenedor-login">
+
+            <div class="bloque-info">
+
+                <div class="grupo-parrafo">
+                    <h1>Bienvenido a ShopWise</h1>
+                    <p>"ShopWise es tu solución integral para gestionar las finanzas de tus compras y ventas. Con nuestra plataforma, podrás controlar tus ingresos y gastos, analizar tu flujo de caja y tomar decisiones informadas para maximizar tus ganancias. Optimiza tu negocio con ShopWise y lleva tus finanzas al siguiente nivel"</p>
+                </div>
+
+                <img src="./../../public/images/fondo-abstracto.png" alt="fondo login" id="fondo-login">
+
+            </div>
+
+
+
+            <div class="bloque-login">
+                <div id="mensaje-login"></div>
+
+                <form id="form-login" class="elementos-login">
+                    <h2>USER LOGIN</h2>
+
+                    <div class="grupo-input">
+                        <img src="./../../public/icons/login.png" alt="Usuario">
+                        <input type="text" id="user" name="username" placeholder="Usuario" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <img src="./../../public/icons/candado.png" alt="Contraseña">
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    </div>
+
+                    <button type="submit" id="btn-login">Login</button>
+                </form>
+                
+            </div>
+
+        </div>
+    </main>
+
+    <script type="module" src="./../js/login.js"></script>
+</body>
+</html>

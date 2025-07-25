@@ -1,0 +1,15 @@
+{
+    "users":[
+        {
+            "id":"j041",
+            "username":"jesus",
+            "password":"contraseña"
+        },
+        {
+            "id":"h14d",
+            "username":"pepito",
+            "password":"pepito123"
+        }
+    ],
+    "categorias":[]
+}

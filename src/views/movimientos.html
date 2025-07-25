@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../src/CSS/style.css">
+    <title>Movimientos | ShopWise</title>
+</head>
+<body>
+    <header>
+
+        <nav class="nav-categorias">
+            <div class="nav-izquierda">
+                <a href="dashboard.html" class="icono-volver-container">
+                    <img src="./../../public/icons/back.png" alt="Volver" class="icono-volver">
+                </a>
+                
+                <a href="#">S<span>h</span>op<span>W</span>ise</a>
+            </div>
+            
+            <h1 class="nav-titulo">Movimientos</h1>
+
+            <div class="icono-login-container">
+                <img src="./../../public/icons/login.png" alt="icono de login" id="icono-login">
+                <div class="circulo-verde"></div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main id="main-movimientos">
+
+        <img src="./../../public/images/fondo.png" alt="Fondo de Movimientos" class="fondo-main">
+
+        <section id="movimientos">
+
+            <div class="elegir-movimientos">
+                <h2>Agregar movimiento</h2>
+
+                <label>Tipo</label>
+                <select id="tipo-movimiento" class="input-movimiento-opcion">
+                    <option value="selecciona" >--Selecciona--</option>
+                </select>
+
+                <label>Descripción</label>
+                <input type="text" id="descripcion-movimiento" class="input-movimiento">
+
+                <label>Importe</label>
+                <input type="number" id="importe-movimiento" class="input-movimiento">
+
+                <label>Fecha</label>
+                <input type="date" id="fecha-movimiento" class="input-movimiento">
+
+                <label>Categoría</label>
+                <select id="categoria-movimiento" class="input-movimiento-opcion">
+                    <option value="selecciona" >--Selecciona--</option>
+                </select>
+
+                <button type="submit" id="btn-guardar-movimiento">Guardar Movimiento</button>
+            </div>
+
+            <div class="lista-movimientos">
+                <h2>Lista de Movimientos</h2>
+                <label>Tipo</label>
+                <select id="tipo-movimiento" class="input-movimiento-opcion">
+                    <option value="selecciona" >--Selecciona--</option>
+                </select>
+            </div>
+
+        </section>
+
+        <img src="./../../public/images/fondo.png" alt="Fondo de Movimientos" class="fondo-movimientos-2"> <!--arreglar-->
+
+    </main>
+</body>
+</html>
