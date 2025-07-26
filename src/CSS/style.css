@@ -510,7 +510,7 @@ nav a span {
     margin-top: 0.5rem;
 }
 
-.btn-agregar-categoria {
+.btn-agregar-categoria-enabled {
     width: 90px;
     height: 35px;
     border: none;
@@ -521,7 +521,19 @@ nav a span {
     margin-right: 1rem;
 }
 
-.btn-actualizar-categoria {
+.btn-agregar-categoria-disabled {
+    width: 90px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-right: 1rem;
+}
+
+.btn-actualizar-categoria-enabled {
+    display: inline;
     width: 90px;
     height: 35px;
     border: none;
@@ -529,6 +541,10 @@ nav a span {
     color: white;
     cursor: pointer;
     background-color: #064789;
+}
+
+.btn-actualizar-categoria-disabled {
+    display: none;
 }
 
 .lista-categorias {
@@ -576,7 +592,7 @@ nav a span {
     margin-top: 1rem;
 }
 
-.btn-eliminar-categoria {
+.btn-eliminar-categoria-enabled {
     width: 70px;
     height: 35px;
     border: none;
@@ -584,6 +600,17 @@ nav a span {
     color: white;
     cursor: pointer;
     background-color: #FF171B;
+    margin-right: 1rem;
+}
+
+.btn-eliminar-categoria-disabled {
+    width: 70px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
     margin-right: 1rem;
 }
 
@@ -622,6 +649,11 @@ nav a span {
     background: #FFFFFF;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(153, 153, 153, 0.25) 100%);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#formulario-movimientos {
+    display: flex;
+    flex-direction: column;
 }
 
 .elegir-movimientos h2 {
@@ -673,6 +705,12 @@ nav a span {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(153, 153, 153, 0.25) 100%);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 6rem;
+}
+
+.filtros {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
 }
 
 .fondo-movimientos-2 {

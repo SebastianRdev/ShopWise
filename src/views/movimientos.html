@@ -38,34 +38,64 @@
             <div class="elegir-movimientos">
                 <h2>Agregar movimiento</h2>
 
-                <label>Tipo</label>
-                <select id="tipo-movimiento" class="input-movimiento-opcion">
-                    <option value="selecciona" >--Selecciona--</option>
-                </select>
+                <form id="formulario-movimientos">
+                    <label>Tipo</label>
+                    <select id="tipo-movimiento" class="input-movimiento-opcion" name="tipo" required>
+                        <option value="selecciona" >--Selecciona--</option>
+                        <option value="selecciona" >Compra</option>
+                        <option value="selecciona" >Venta</option>
+                    </select>
 
-                <label>Descripción</label>
-                <input type="text" id="descripcion-movimiento" class="input-movimiento">
+                    <label>Descripción</label>
+                    <input type="text" id="descripcion-movimiento" class="input-movimiento" name="descripcion" required>
 
-                <label>Importe</label>
-                <input type="number" id="importe-movimiento" class="input-movimiento">
+                    <label>Importe</label>
+                    <input type="number" id="importe-movimiento" class="input-movimiento" name="importe" min="1" required>
 
-                <label>Fecha</label>
-                <input type="date" id="fecha-movimiento" class="input-movimiento">
+                    <label>Fecha</label>
+                    <input type="date" id="fecha-movimiento" class="input-movimiento" name="fecha" required>
 
-                <label>Categoría</label>
-                <select id="categoria-movimiento" class="input-movimiento-opcion">
-                    <option value="selecciona" >--Selecciona--</option>
-                </select>
+                    <label>Categoría</label>
+                    <select id="categoria-movimiento" class="input-movimiento-opcion" name="categoria" required>
+                        <option value="selecciona" >--Selecciona--</option>
+                    </select>
 
-                <button type="submit" id="btn-guardar-movimiento">Guardar Movimiento</button>
+                    <button type="submit" id="btn-guardar-movimiento">Guardar Movimiento</button>
+                </form>
             </div>
 
             <div class="lista-movimientos">
                 <h2>Lista de Movimientos</h2>
-                <label>Tipo</label>
-                <select id="tipo-movimiento" class="input-movimiento-opcion">
-                    <option value="selecciona" >--Selecciona--</option>
-                </select>
+                <div class="filtros">
+                    <select id="tipo-movimiento" class="input-movimiento-opcion">
+                        <option value="selecciona" >-Tipo-</option>
+                        <option value="selecciona" >Compra</option>
+                        <option value="selecciona" >Venta</option>
+                    </select>
+
+                    <select id="tipo-movimiento" class="input-movimiento-opcion">
+                        <option value="selecciona" >-Categoria-</option>
+                    </select>
+
+                    <input type="date" id="filtro-fecha-inicio" />
+                    <input type="date" id="filtro-fecha-fin" />
+
+                    <button id="btn-limpiar-filtros">Limpiar</button>
+                </div>
+                
+                <table id="tabla-movimientos">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Ciudad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-movimientos">
+                        <!-- Aquí se inyectarán dinámicamente las filas -->
+                    </tbody>
+                </table>
+
             </div>
 
         </section>
@@ -73,5 +103,7 @@
         <img src="./../../public/images/fondo.png" alt="Fondo de Movimientos" class="fondo-movimientos-2"> <!--arreglar-->
 
     </main>
+
+    <script type="module" src="./../js/movimientos.js"></script>
 </body>
 </html>
