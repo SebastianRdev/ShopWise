@@ -10,13 +10,12 @@
 <body>
     <header>
 
-        <nav class="nav-categorias">
+        <nav class="nav-modulos">
             <div class="nav-izquierda">
                 <a href="dashboard.html" class="icono-volver-container">
                     <img src="./../../public/icons/back.png" alt="Volver" class="icono-volver">
                 </a>
-                
-                <a href="#">S<span>h</span>op<span>W</span>ise</a>
+                <a href="#" class="marca">S<span>h</span>op<span>W</span>ise</a>
             </div>
             
             <h1 class="nav-titulo">Movimientos</h1>
@@ -41,9 +40,9 @@
                 <form id="formulario-movimientos">
                     <label>Tipo</label>
                     <select id="tipo-movimiento" class="input-movimiento-opcion" name="tipo" required>
-                        <option value="selecciona" >--Selecciona--</option>
-                        <option value="selecciona" >Compra</option>
-                        <option value="selecciona" >Venta</option>
+                        <option value="" disabled selected>--Selecciona--</option>
+                        <option value="compra">Compra</option>
+                        <option value="venta">Venta</option>
                     </select>
 
                     <label>Descripción</label>
@@ -56,8 +55,8 @@
                     <input type="date" id="fecha-movimiento" class="input-movimiento" name="fecha" required>
 
                     <label>Categoría</label>
-                    <select id="categoria-movimiento" class="input-movimiento-opcion" name="categoria" required>
-                        <option value="selecciona" >--Selecciona--</option>
+                    <select id="categoria-movimiento" class="input-movimiento-opcion" name="category" required>
+                        <option value="" disabled selected>--Selecciona--</option>
                     </select>
 
                     <button type="submit" id="btn-guardar-movimiento">Guardar Movimiento</button>
@@ -67,18 +66,24 @@
             <div class="lista-movimientos">
                 <h2>Lista de Movimientos</h2>
                 <div class="filtros">
-                    <select id="tipo-movimiento" class="input-movimiento-opcion">
-                        <option value="selecciona" >-Tipo-</option>
-                        <option value="selecciona" >Compra</option>
-                        <option value="selecciona" >Venta</option>
+
+                    <label>Tipo</label>
+                    <select id="filtro-tipo-movimiento" class="input-movimiento-opcion">
+                        <option value="" disabled selected>--Tipo--</option>
+                        <option value="compra">Compra</option>
+                        <option value="venta">Venta</option>
                     </select>
 
-                    <select id="tipo-movimiento" class="input-movimiento-opcion">
-                        <option value="selecciona" >-Categoria-</option>
+                    <label>Categoria</label>
+                    <select id="filtro-categoria-movimiento" class="input-movimiento-opcion">
+                        <option value="" disabled selected>--Categoria--</option>
                     </select>
 
-                    <input type="date" id="filtro-fecha-inicio" />
-                    <input type="date" id="filtro-fecha-fin" />
+                    <label>Desde:</label>
+                    <input type="date" id="filtro-fecha-inicio"/>
+
+                    <label>Hasta</label>
+                    <input type="date" id="filtro-fecha-fin"/>
 
                     <button id="btn-limpiar-filtros">Limpiar</button>
                 </div>
@@ -86,9 +91,13 @@
                 <table id="tabla-movimientos">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Edad</th>
-                            <th>Ciudad</th>
+                            <th>#</th>
+                            <th>Tipo</th>
+                            <th>Descripcion</th>
+                            <th>Importe</th>
+                            <th>Fecha</th>
+                            <th>Categoria</th>
+                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody id="tbody-movimientos">

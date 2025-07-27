@@ -88,6 +88,8 @@ async function actualizarCategoria(id,nombre) {
 async function eliminarCategoria(id) {
     await fetch (`${API_URL}/${id}`, {
         method: "DELETE",
+        headers: { "Content-Type":"application/json"},
+        body: JSON.stringify()
     })
     await pintarCategorias()
 }

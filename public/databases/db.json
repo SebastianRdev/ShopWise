@@ -13,7 +13,7 @@
   ],
   "categories": [
     {
-      "nombre": "Electronicas",
+      "nombre": "Electronica",
       "id": "m021"
     },
     {
@@ -21,5 +21,14 @@
       "id": "aaba"
     }
   ],
-  "movimientos": []
+  "movimientos": [
+    {
+      "id": "e5bc",
+      "tipo": "compra",
+      "descripcion": "Escoba",
+      "importe": "2500",
+      "fecha": "2025-07-26",
+      "categoryId": "aaba"
+    }
+  ]
 }

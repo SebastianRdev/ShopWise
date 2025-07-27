@@ -245,7 +245,7 @@ html, body {
         HEADER
 =====================
 */
-nav {
+#nav-dashboard {
     width: 100%;
     min-height: 70px;
     background: #0E3B43;
@@ -255,10 +255,9 @@ nav {
     align-items: center;
     padding: 0 20px;
     color: white;
-    box-sizing: border-box;
 }
 
-nav a{
+#nav-dashboard a{
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -266,7 +265,7 @@ nav a{
     padding-left: 2rem;
 }
 
-nav a span {
+#nav-dashboard a span {
     color: #6EEB83;
 }
 
@@ -402,30 +401,30 @@ nav a span {
         HEADER
 =====================
 */
-.nav-categorias {
+.nav-modulos {
     display: flex;
     min-height: 70px;
-    justify-content: space-between;
     align-items: center;
     background: linear-gradient(90deg, #0E3B43 0%, #5300e6 100%);
     color: white;
     padding: 0.5rem 1.5rem;
-    min-height: 60px;
-    position: relative;
-    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
-.nav-izquierda {
+.nav-modulos a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-modulos a span {
+    color: #6EEB83;
+}
+
+.nav-izquierda{
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-}
-
-.nav-izquierda a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
 }
 
 .icono-volver-container {
@@ -444,16 +443,24 @@ nav a span {
 .icono-volver {
     width: 30px;
     height: 30px;
-    margin: 40% 0 0 -120%;
+    margin: 20% 0 0 15%;
+}
+
+.marca {
+    padding-left: 1rem;
+}
+
+.icono-login-container {
+    margin-left: 8.5rem;
 }
 
 .nav-titulo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.3rem;
     color: #6EEB83;
 }
+
 
 /* ==================
     MAIN CATEGORIAS
@@ -698,6 +705,7 @@ nav a span {
 
 .lista-movimientos {
     display: flex;
+    height: auto;
     flex-direction: column;
     border-radius: 15px;
     padding: 2rem 3rem 2rem 3rem;
@@ -705,12 +713,87 @@ nav a span {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(153, 153, 153, 0.25) 100%);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 6rem;
+    overflow-x: auto;
 }
 
 .filtros {
     display: flex;
     flex-direction: column;
+    margin-top: 0.5rem;
     margin-bottom: 3rem;
+}
+
+.filtros label {
+    color: #0E3B43;
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.filtros input {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#btn-limpiar-filtros {
+    width: 90px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #FF171B;
+    margin-top: 1rem;
+    align-self: center;
+}
+
+#tabla-movimientos {
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: break-word;
+    border-collapse: collapse;
+}
+
+#tabla-movimientos thead {
+    background-color: #0E3B43;
+    color: white;
+}
+
+#tabla-movimientos th:nth-child(1),
+#tabla-movimientos td:nth-child(1) {
+    width: 40px;
+    text-align: center;
+    padding: 12px 0;
+}
+
+#tabla-movimientos tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-eliminar-movimiento {
+    width: 70px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #FF171B;
+    margin-right: 1rem;
+}
+
+.btn-editar-movimiento {
+    width: 70px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #064789;
+    margin-right: 1rem;
 }
 
 .fondo-movimientos-2 {
@@ -724,7 +807,11 @@ nav a span {
     transform: scaleY(-1);
 }
 
-
+/* PAGINA REPORTES */
+/* ==================
+    MAIN REPORTES
+=====================
+*/
 .contenedor-grid-reportes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -752,7 +839,7 @@ nav a span {
 }
 
 #main-reportes {
-    height:100%;
+    height: 100%;
 }
 
 #reportes {
@@ -760,4 +847,73 @@ nav a span {
     margin: 4rem auto;
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .nav-modulos {
+        flex-direction: column;
+    }
+
+    .nav-izquierda {
+        width: 100%;
+    }
+
+    .marca {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 3rem;
+    }
+
+    .icono-login-container {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0.5rem;
+    }
+
+    #categorias {
+        max-width: 75%;
+    }
+
+    .elegir-categoria {
+        text-align: center;
+    }
+
+    .elegir-categoria label {
+        padding-bottom: 1rem;
+    }
+
+    .btn-agregar-categoria-enabled {
+        margin: 0 auto;
+    }
+
+    .btn-agregar-categoria-disabled {
+        margin: 0 auto 1rem auto;
+    }
+
+    .btn-actualizar-categoria-enabled {
+        margin: 0 auto;
+    }
+
+    #movimientos {
+        max-width: 75%;
+    }
+
+    #btn-guardar-movimiento {
+        width: 125px;
+        height: 40px;
+        margin: 1.5rem auto 0.5rem auto;
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    #reportes {
+        max-width: 75%;
+    }
+
+    .contenedor-grid-reportes {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr) ;
+    }
+
 }
