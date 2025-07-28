@@ -20,7 +20,6 @@ body {
 
 /* PAGINA INDEX */
 /* Fondo degradado para toda la sección */
-/* Fondo degradado para toda la sección */
 #hero {
     display: flex;
     justify-content: center; /* Centra el bloque contenedor en la pantalla */
@@ -741,7 +740,7 @@ body {
     padding-bottom: 0.5rem;
 }
 
-.filtros input {
+.date_filtros {
     border: none;
     background-color: rgba(255, 255, 255, 0.55);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);

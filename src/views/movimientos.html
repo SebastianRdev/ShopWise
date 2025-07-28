@@ -2,41 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Hace que el sitio sea responsive y se adapte a dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción de la página -->
+    <meta name="description" content="Gestión de movimientos financieros en ShopWise">
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Sebastian Reyes">
+
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="Movimientos, Finanzas, ShopWise, Gastos, Ingresos">
+
+    <!-- Ícono de la pestaña -->
     <link rel="icon" href="./../../public/icons/favicon.png" type="image/png">
+
     <link rel="stylesheet" href="./../../src/CSS/style.css">
+
     <title>Movimientos | ShopWise</title>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
 
+        <!-- Barra de navegación usada para movimientos, categorias y reportes -->
         <nav class="nav-modulos">
+
             <div class="nav-izquierda">
+
+                <!-- Botón para volver al dashboard (pantalla principal) -->
                 <a href="dashboard.html" class="icono-volver-container">
                     <img src="./../../public/icons/back.png" alt="Volver" class="icono-volver">
                 </a>
+
+                <!-- Marca del sitio ShopWise -->
                 <a href="#" class="marca">S<span>h</span>op<span>W</span>ise</a>
+
             </div>
             
+            <!-- Título de la sección actual -->
             <h1 class="nav-titulo">Movimientos</h1>
 
+            <!-- Icono de login del usuario -->
             <div class="icono-login-container">
+
                 <img src="./../../public/icons/login.png" alt="icono de login" id="icono-login">
                 <div class="circulo-verde"></div>
+
             </div>
+
         </nav>
 
     </header>
 
+    <!-- Contenido principal de la página -->
     <main id="main-movimientos">
         
         <section id="movimientos">
 
+            <!-- Bloque para agregar y actualizar movimientos -->
             <div class="elegir-movimientos">
                 <h2>Agregar movimiento</h2>
 
+                <!-- Formulario para para agregar y actualizar movimientos -->
                 <form id="formulario-movimientos">
+
+                    <!-- Etiqueta e input para el tipo de movimiento -->
                     <label>Tipo</label>
                     <select id="tipo-movimiento" class="input-movimiento-opcion" name="tipo" required>
                         <option value="" disabled selected>--Selecciona--</option>
@@ -44,50 +77,66 @@
                         <option value="venta">Venta</option>
                     </select>
 
+                    <!-- Etiqueta e input para la descripción -->
                     <label>Descripción</label>
                     <input type="text" id="descripcion-movimiento" class="input-movimiento" name="descripcion" required>
 
+                    <!-- Etiqueta e input para el importe -->
                     <label>Importe</label>
                     <input type="number" id="importe-movimiento" class="input-movimiento" name="importe" min="1" required>
 
+                    <!-- Etiqueta e input para la fecha -->
                     <label>Fecha</label>
                     <input type="date" id="fecha-movimiento" class="input-movimiento" name="fecha" required>
 
+                    <!-- Etiqueta y select para la categoría -->
                     <label>Categoría</label>
                     <select id="categoria-movimiento" class="input-movimiento-opcion" name="category" required>
                         <option value="" disabled selected>--Selecciona--</option>
                     </select>
 
+                    <!-- Botón para guardar el movimiento -->
                     <button type="submit" id="btn-guardar-movimiento">Guardar Movimiento</button>
+
                 </form>
+
             </div>
 
+            <!-- Bloque para mostrar la lista de movimientos -->
             <div class="lista-movimientos">
+
                 <h2>Lista de Movimientos</h2>
+
                 <div class="filtros" id="filtros">
 
+                    <!-- Filtro por tipo de movimiento -->
                     <label>Tipo</label>
                     <select id="filtro-tipo-movimiento" class="input-movimiento-opcion input-tipo-filtro">
-                        <option value="" disabled selected>--Tipo--</option>
+                        <option value="" selected>--Tipo--</option>
                         <option value="compra">Compra</option>
                         <option value="venta">Venta</option>
                     </select>
 
+                    <!-- Filtro por categoría -->
                     <label>Categoria</label>
                     <select id="filtro-categoria-movimiento" class="input-movimiento-opcion">
-                        <option value="" disabled selected>--Categoria--</option>
+                        <option value="" selected>--Categoria--</option>
                     </select>
 
-                    <label>Desde:</label>
-                    <input type="date" id="filtro-fecha-inicio"/>
+                    <!-- Filtro por fecha de inicio -->
+                    <label for="filtro-fecha-inicio">Desde:</label>
+                    <input type="date" id="filtro-fecha-inicio" class="date_filtros" name="desde">
 
-                    <label>Hasta</label>
-                    <input type="date" id="filtro-fecha-fin"/>
+                    <!-- Filtro por fecha de fin -->
+                    <label for="filtro-fecha-fin">Hasta:</label>
+                    <input type="date" id="filtro-fecha-fin" class="date_filtros" name="hasta">
 
-                    <button id="btn-limpiar-filtros">Limpiar</button>
+                    <!-- Botón para limpiar filtros -->
+                    <button id="btn-limpiar-filtros" class="btn-limpiar">Limpiar</button>
 
                 </div>
                 
+                <!-- Tabla para mostrar los movimientos -->
                 <table id="tabla-movimientos">
                     <thead>
                         <tr>
@@ -111,6 +160,7 @@
 
     </main>
 
+    <!-- Importa el archivo JavaScript específico para esta página -->
     <script type="module" src="./../js/movimientos.js"></script>
 </body>
 </html>

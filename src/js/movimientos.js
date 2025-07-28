@@ -17,6 +17,8 @@ const inputCategoria = document.getElementById("categoria-movimiento")
 
 const filtroTipo = document.getElementById("filtro-tipo-movimiento")
 const filtroCategoria = document.getElementById("filtro-categoria-movimiento")
+const filtroDesde = document.getElementById("filtro-fecha-inicio")
+const filtroFin = document.getElementById("filtro-fecha-fin")
 
 document.addEventListener("DOMContentLoaded", function () {
     pintarCategorias()
@@ -82,10 +84,12 @@ tbody.addEventListener("click", async function(event) {
 })
 
 filtroTipo.addEventListener("change", async function () {
-        let tipoFiltrado = await fetch (`${endpointMovimientos}?tipo=${filtroTipo.value}&_embed=category`)
-        let dataTipo = await tipoFiltrado.json()
 
-        pintarFiltros(dataTipo)
+    let tipoFiltrado = await fetch (`${endpointMovimientos}?tipo=${filtroTipo.value}&_embed=category`)
+    let dataTipo = await tipoFiltrado.json()
+
+    pintarFiltros(dataTipo)
+
 })
 
 filtroCategoria.addEventListener("change", async function () {
@@ -93,13 +97,33 @@ filtroCategoria.addEventListener("change", async function () {
     let categ = await fetch(`${endpointMovimientos}?categoryId=${filtroCategoria.value}&_embed=category`)
     let dataCategoria = await categ.json()
 
-    for (let categoria of dataCategoria) {
-        if (filtroCategoria.value === categoria.category.id) {
-            pintarFiltros(dataCategoria)
-        }
-    }
+    pintarFiltros(dataCategoria)
 
 })
+
+filtroDesde.addEventListener("change", filtrarPorFechas)
+filtroFin.addEventListener("change", filtrarPorFechas)
+
+filtros.addEventListener("click", async function(event) {
+    event.preventDefault()
+
+    if (event.target.classList.contains("btn-limpiar")) {
+        filtroTipo.value = ""
+        filtroCategoria.value = ""
+        filtroDesde.value = ""
+        filtroFin.value = ""
+        pintarMovimientos()
+    }
+})
+
+async function crearMovimientos(nuevoMovimiento) {
+    await fetch(endpointMovimientos, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(nuevoMovimiento)
+    })
+    pintarMovimientos()
+}
 
 async function pintarCategorias() {
 
@@ -162,6 +186,32 @@ async function pintarMovimientos() {
     }
 }
 
+async function filtrarPorFechas() {
+    let response = await fetch(`${endpointMovimientos}?_embed=category`)
+    let data = await response.json()
+    let desde = filtroDesde.value
+    let hasta = filtroFin.value
+
+    let dataFiltrada = data.filter(mov => {
+        // Ambas fechas seleccionadas
+        if (desde && hasta) {
+            return mov.fecha >= desde && mov.fecha <= hasta
+        }
+        // Solo desde
+        if (desde) {
+            return mov.fecha >= desde
+        }
+        // Solo hasta
+        if (hasta) {
+            return mov.fecha <= hasta
+        }
+        // Ningún filtro
+        return true
+    })
+
+    pintarFiltros(dataFiltrada)
+}
+
 async function pintarFiltros(dataFiltro) {
     tbody.innerHTML = ""
 
@@ -189,11 +239,3 @@ async function pintarFiltros(dataFiltro) {
     }
 }
 
-async function crearMovimientos(nuevoMovimiento) {
-    await fetch(endpointMovimientos, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(nuevoMovimiento)
-    })
-    pintarMovimientos()
-}

@@ -73,6 +73,22 @@
       "importe": "670",
       "fecha": "2025-07-27",
       "categoryId": "9933"
+    },
+    {
+      "id": "cbe4",
+      "tipo": "compra",
+      "descripcion": "Nevera",
+      "importe": "6500",
+      "fecha": "2025-07-29",
+      "categoryId": "9193"
+    },
+    {
+      "id": "846a",
+      "tipo": "compra",
+      "descripcion": "AirFrayer",
+      "importe": "2675",
+      "fecha": "2025-07-28",
+      "categoryId": "9193"
     }
   ]
 }

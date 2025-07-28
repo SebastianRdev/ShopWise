@@ -2,52 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Hace que el sitio sea responsive y se adapte a dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción de la página -->
+    <meta name="description" content="Administra las categorías de tus gastos e ingresos en ShopWise">
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Sebastian Reyes">
+
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="Categorías, Finanzas, ShopWise, Gastos, Ingresos">
+
+    <!-- Ícono de la pestaña -->
     <link rel="icon" href="./../../public/icons/favicon.png" type="image/png">
+
     <link rel="stylesheet" href="./../../src/CSS/style.css">
+
     <title>Categorías | ShopWise</title>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
 
+        <!-- Barra de navegación usada para movimientos, categorias y reportes -->
         <nav class="nav-modulos">
             <div class="nav-izquierda">
+
+                <!-- Botón para volver al dashboard (pantalla principal) -->
                 <a href="dashboard.html" class="icono-volver-container">
                     <img src="./../../public/icons/back.png" alt="Volver" class="icono-volver">
                 </a>
+
+                <!-- Marca del sitio ShopWise -->
                 <a href="#" class="marca">S<span>h</span>op<span>W</span>ise</a>
+
             </div>
             
+            <!-- Título de la sección actual -->
             <h1 class="nav-titulo">Categorias</h1>
 
             <div class="icono-login-container">
+
+                <!-- Icono de login del usuario -->
                 <img src="./../../public/icons/login.png" alt="icono de login" id="icono-login">
                 <div class="circulo-verde"></div>
+
             </div>
         </nav>
 
     </header>
 
+    <!-- Contenido principal de la página -->
     <main id="main-categorias">
 
+        <!-- Sección para gestión de categorías -->
         <section id="categorias">
 
+            <!-- Bloque para agregar/editar categorías -->
             <div class="elegir-categoria">
 
                 <h2>Elegir Categoria</h2>
+
+                <!-- Formulario para agregar o actualizar una categoría -->
                 <form id="formulario">
-                    <label>Nombre de la categoria</label>
+
+                    <label for="nombre-categoria">Nombre de la categoria</label>
                     <input type="text" id="nombre-categoria" required>
-                
+                    
+                    <!-- Botones para agregar o actualizar la categoría -->
                     <div class="botones-elegir-categoria">
+
                         <button type="submit" id="btn-agregar" class="btn-agregar-categoria-enabled">Agregar</button>
+
                         <button type="submit" id="btn-actualizar" class="btn-actualizar-categoria-disabled">Actualizar</button>
+
                     </div>
+
                 </form>
                 
             </div>
 
+            <!-- Bloque que muestra la lista de categorías registradas -->
             <div class="lista-categorias">
                 <h2>Categorías Registradas</h2>
 
@@ -61,6 +99,7 @@
 
     </main>
 
+    <!-- Importa el archivo JavaScript específico para esta página -->
     <script type="module" src="./../js/categorias.js"></script>
 </body>
 </html>
