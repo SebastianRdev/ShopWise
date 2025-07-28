@@ -11,6 +11,13 @@ html, body {
     color: #333;
 }
 
+body {
+    background-image: url("./../../public/images/fondo.png");
+    background-repeat: repeat-y;
+    background-size: cover; /* o '100% auto' si prefieres */
+    background-position: top center;
+}
+
 /* PAGINA INDEX */
 /* Fondo degradado para toda la sección */
 /* Fondo degradado para toda la sección */
@@ -269,7 +276,7 @@ html, body {
     color: #6EEB83;
 }
 
-.icono-login-container {
+.icono-login-container-dashboard {
     border-radius: 50%;
     position: relative;
     display: inline-block;
@@ -279,7 +286,7 @@ html, body {
     cursor: pointer;
 }
 
-.icono-login-container:hover {
+.icono-login-container-dashboard:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -312,16 +319,6 @@ html, body {
     margin: 4rem auto;
     position: relative; /* Esto es crucial */
     z-index: 1;
-}
-
-.fondo-main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Lo pone detrás del contenido */
 }
 
 .dashboard-top {
@@ -448,6 +445,20 @@ html, body {
 
 .marca {
     padding-left: 1rem;
+}
+
+.icono-login-container {
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    padding-right: 1rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.icono-login-container:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .icono-login-container {
@@ -850,6 +861,53 @@ html, body {
 }
 
 @media (max-width: 768px) {
+    #nav-dashboard {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #nav-dashboard a{
+        padding-left: 2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #dashboard {
+        max-width: 75%;
+    }
+
+    .dashboard-top h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        padding: 0;
+        margin-top: 3rem;
+    }
+
+    .dashboard-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .movimientos {
+        grid-column: 1;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .movimientos img {
+        max-width: 150px;
+        margin-right: 0;
+    }
+
+    
+
     .nav-modulos {
         flex-direction: column;
     }
@@ -866,9 +924,7 @@ html, body {
     }
 
     .icono-login-container {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0.5rem;
+        margin: 0.5rem auto 0 auto;
     }
 
     #categorias {

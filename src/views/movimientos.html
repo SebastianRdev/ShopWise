@@ -8,6 +8,7 @@
     <title>Movimientos | ShopWise</title>
 </head>
 <body>
+
     <header>
 
         <nav class="nav-modulos">
@@ -29,9 +30,7 @@
     </header>
 
     <main id="main-movimientos">
-
-        <img src="./../../public/images/fondo.png" alt="Fondo de Movimientos" class="fondo-main">
-
+        
         <section id="movimientos">
 
             <div class="elegir-movimientos">
@@ -65,10 +64,10 @@
 
             <div class="lista-movimientos">
                 <h2>Lista de Movimientos</h2>
-                <div class="filtros">
+                <div class="filtros" id="filtros">
 
                     <label>Tipo</label>
-                    <select id="filtro-tipo-movimiento" class="input-movimiento-opcion">
+                    <select id="filtro-tipo-movimiento" class="input-movimiento-opcion input-tipo-filtro">
                         <option value="" disabled selected>--Tipo--</option>
                         <option value="compra">Compra</option>
                         <option value="venta">Venta</option>
@@ -86,6 +85,7 @@
                     <input type="date" id="filtro-fecha-fin"/>
 
                     <button id="btn-limpiar-filtros">Limpiar</button>
+
                 </div>
                 
                 <table id="tabla-movimientos">
@@ -108,8 +108,6 @@
             </div>
 
         </section>
-
-        <img src="./../../public/images/fondo.png" alt="Fondo de Movimientos" class="fondo-movimientos-2"> <!--arreglar-->
 
     </main>
 

@@ -19,6 +19,18 @@
     {
       "nombre": "Familia",
       "id": "aaba"
+    },
+    {
+      "id": "9933",
+      "nombre": "Ropa"
+    },
+    {
+      "id": "9193",
+      "nombre": "Electrodomesticos"
+    },
+    {
+      "id": "bdf6",
+      "nombre": "Varios"
     }
   ],
   "movimientos": [
@@ -29,6 +41,38 @@
       "importe": "2500",
       "fecha": "2025-07-26",
       "categoryId": "aaba"
+    },
+    {
+      "id": "3499",
+      "tipo": "venta",
+      "descripcion": "Tecla",
+      "importe": "500",
+      "fecha": "2025-07-27",
+      "categoryId": "m021"
+    },
+    {
+      "id": "cac0",
+      "tipo": "compra",
+      "descripcion": "Mouse",
+      "importe": "1500",
+      "fecha": "2025-07-09",
+      "categoryId": "m021"
+    },
+    {
+      "id": "b5bd",
+      "tipo": "venta",
+      "descripcion": "Microondas",
+      "importe": "4500",
+      "fecha": "2025-07-26",
+      "categoryId": "9193"
+    },
+    {
+      "id": "1ef7",
+      "tipo": "compra",
+      "descripcion": "Camisa",
+      "importe": "670",
+      "fecha": "2025-07-27",
+      "categoryId": "9933"
     }
   ]
 }
