@@ -9,34 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 async function categoriaVentas() {
-    const response = await fetch(`${endpointMovimientos}?tipo=venta&_expand=category`)
+    const response = await fetch(`${endpointMovimientos}?tipo=venta&_embed=category`)
     const data = await response.json()
 
     const acumuladosPorCategoria = {}
 
     data.forEach(rep => {
-        const nombreCategoria = rep.category?.nombre || "Sin categoría"
-        if (!acumuladosPorCategoria[nombreCategoria]) {
-            acumuladosPorCategoria[nombreCategoria] = 0
-        }
-        acumuladosPorCategoria[nombreCategoria] += rep.importe
+        
     })
 
-    // Convertir a array para ordenarlo
-    const ordenado = Object.entries(acumuladosPorCategoria)
-        .sort((a, b) => b[1] - a[1]) // Mayor a menor por importe
-
-    // Pintar los resultados
-    ordenado.forEach(([categoria, total]) => {
-        reportes.innerHTML += `
-            <article class="tarjetas-reportes">
-                <h2>📦 Ventas: ${categoria}</h2>
-                <p>Total: ${total}</p>
-            </article>
-        `
-    })
-
-    console.log("Ventas por categoría:", ordenado)
+    
 }
 
 
