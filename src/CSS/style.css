@@ -740,6 +740,12 @@ body {
     padding-bottom: 0.5rem;
 }
 
+.filtros h3 {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.4rem;
+}
+
 .date_filtros {
     border: none;
     background-color: rgba(255, 255, 255, 0.55);
@@ -825,7 +831,7 @@ body {
 .contenedor-grid-reportes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
     gap: 1.5rem;
 }
 

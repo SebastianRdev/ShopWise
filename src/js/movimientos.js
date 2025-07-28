@@ -31,7 +31,7 @@ form.addEventListener("submit", async function(event) {
     let nuevoMovimiento = {
         tipo: inputTipo.value,
         descripcion: inputDescripcion.value,
-        importe: inputImporte.value,
+        importe: parseFloat(inputImporte.value),
         fecha: inputFecha.value,
         categoryId: inputCategoria.value
     }
@@ -169,7 +169,7 @@ async function pintarMovimientos() {
                 <td data-label="Descripción">${movimiento.descripcion}</td>
                 <td data-label="Importe">${movimiento.importe}</td>
                 <td data-label="Fecha">${movimiento.fecha}</td>
-                <td data-label="Categoría">${movimiento.category.nombre}</td>
+                <td data-label="Categoría">${movimiento.category === undefined ? "La categoria fue eliminada" : movimiento.category.nombre}</td>
                 <td data-label="Acciones">
                     <button class="btn-editar-movimiento" 
                         data-id="${movimiento.id}" 
@@ -193,19 +193,19 @@ async function filtrarPorFechas() {
     let hasta = filtroFin.value
 
     let dataFiltrada = data.filter(mov => {
-        // Ambas fechas seleccionadas
+
         if (desde && hasta) {
             return mov.fecha >= desde && mov.fecha <= hasta
         }
-        // Solo desde
+
         if (desde) {
             return mov.fecha >= desde
         }
-        // Solo hasta
+
         if (hasta) {
             return mov.fecha <= hasta
         }
-        // Ningún filtro
+
         return true
     })
 

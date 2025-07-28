@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Hace que el sitio sea responsive y se adapte a dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción de la página -->
+    <meta name="description" content="Reporta las categorias y los productos mas vendidos y comprados en ShopWise">
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Sebastian Reyes">
+
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="Reportes, Finanzas, ShopWise, Gastos, Ingresos">
+
+    <!-- Ícono de la pestaña -->
     <link rel="icon" href="./../../public/icons/favicon.png" type="image/png">
+
     <link rel="stylesheet" href="./../../src/CSS/style.css">
+
     <title>Reportes y analisis | ShopWise</title>
 </head>
 <body>
@@ -32,34 +47,44 @@
         
         <section id="reportes">
 
-            <div class="contenedor-grid-reportes">
+            <div class="contenedor-grid-reportes" id="grid-reportes">
 
-                <div class="tarjetas-reportes">
+                <article class="tarjetas-reportes" id="categoria-mas-vendida">
                     <h2>🔝 Categoria mas vendida</h2>
                     <p>-</p>
-                </div>
+                </article>
 
-                <div class="tarjetas-reportes">
+                <article class="tarjetas-reportes" id="categoria-mas-compras">
                     <h2>🛍️ Categoria con mas compras</h2>
                     <p>-</p>
-                </div>
+                </article>
 
-                <div class="tarjetas-reportes">
+                <article class="tarjetas-reportes" id="producto-mas-vendido">
                     <h2>📦 Producto mas vendido</h2>
                     <p>-</p>
-                </div>
+                </article>
 
-                <div class="tarjetas-reportes">
+                <article class="tarjetas-reportes" id="producto-mas-comprado">
                     <h2>🛒 Producto mas comprado</h2>
                     <p>-</p>
-                </div>
+                </article>
+
+                <!-- <article class="tarjetas-reportes" id="acumulado-ventas">
+                    <h2>Acumulado de ventas</h2>
+                    <p>-</p>
+                </article>
+
+                <article class="tarjetas-reportes" id="acumulado-compras">
+                    <h2>Acumulado de compras</h2>
+                    <p>-</p>
+                </article> -->
 
             </div>
 
         </section>
 
-        
-        
     </main>
+
+    <script type="module" src="../js/reportes.js"></script>
 </body>
 </html>

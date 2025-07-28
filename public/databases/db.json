@@ -35,60 +35,61 @@
   ],
   "movimientos": [
     {
-      "id": "e5bc",
+      "id": "c858",
       "tipo": "compra",
       "descripcion": "Escoba",
-      "importe": "2500",
+      "importe": 2500,
       "fecha": "2025-07-26",
       "categoryId": "aaba"
     },
     {
-      "id": "3499",
+      "id": "c9c4",
       "tipo": "venta",
       "descripcion": "Tecla",
-      "importe": "500",
+      "importe": 500,
       "fecha": "2025-07-27",
       "categoryId": "m021"
     },
     {
-      "id": "cac0",
+      "id": "d29b",
       "tipo": "compra",
       "descripcion": "Mouse",
-      "importe": "1500",
+      "importe": 1500,
       "fecha": "2025-07-09",
       "categoryId": "m021"
     },
     {
-      "id": "b5bd",
+      "id": "41b5",
       "tipo": "venta",
       "descripcion": "Microondas",
-      "importe": "4500",
+      "importe": 4500,
       "fecha": "2025-07-26",
       "categoryId": "9193"
     },
     {
-      "id": "1ef7",
+      "id": "0c46",
       "tipo": "compra",
       "descripcion": "Camisa",
-      "importe": "670",
+      "importe": 670,
       "fecha": "2025-07-27",
       "categoryId": "9933"
     },
     {
-      "id": "cbe4",
+      "id": "4079",
       "tipo": "compra",
       "descripcion": "Nevera",
-      "importe": "6500",
+      "importe": 6500,
       "fecha": "2025-07-29",
       "categoryId": "9193"
     },
     {
-      "id": "846a",
+      "id": "e9e4",
       "tipo": "compra",
       "descripcion": "AirFrayer",
-      "importe": "2675",
+      "importe": 2675,
       "fecha": "2025-07-28",
       "categoryId": "9193"
     }
-  ]
+  ],
+  "reportes": []
 }
