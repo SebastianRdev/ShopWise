@@ -1,9 +1,11 @@
+/* Reseteo global de márgenes, paddings y box-sizing para todos los elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos generales para html y body: evita scroll horizontal, tipografía y color base */
 html, body {
     overflow-x: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,6 +13,7 @@ html, body {
     color: #333;
 }
 
+/* Fondo de la página con imagen */
 body {
     background-image: url("./../../public/images/fondo.png");
     background-repeat: repeat-y;
@@ -18,8 +21,11 @@ body {
     background-position: top center;
 }
 
-/* PAGINA INDEX */
-/* Fondo degradado para toda la sección */
+/* ===================
+   PAGINA INDEX
+   ===================*/
+
+/* Sección principal con fondo degradado y centrado de contenido */
 #hero {
     display: flex;
     justify-content: center; /* Centra el bloque contenedor en la pantalla */
@@ -30,7 +36,7 @@ body {
     padding: 2rem;
 }
 
-/* Contenedor principal */
+/* Contenedor principal, distribuye los bloques izquierdo y derecho */
 .bloque-contenedor {
     display: flex;
     justify-content: space-between;
@@ -41,9 +47,9 @@ body {
     box-sizing: border-box;
 }
 
-/* Bloque izquierdo (texto) */
+/* Bloque izquierdo: texto, título, lista y botón, con fondo blanco */
 .bloque-izquierdo {
-    width: 55%; /* Ajustamos el tamaño del bloque izquierdo */
+    width: 55%;
     height: 59.8vh;
     background-color: white;
     color: black;
@@ -51,28 +57,32 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadimos una sombra sutil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px 0 0 10px;
 }
 
+/* Título principal del bloque izquierdo */
 .bloque-izquierdo h1 {
-    font-size: 2.5rem; /* Aumentamos el tamaño del título */
+    font-size: 2.5rem;
     font-weight: bolder;
     color: #0E3B43;
     margin-bottom: 1.5rem;
 }
 
+/* Párrafo del bloque izquierdo */
 .bloque-izquierdo p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: #0E3B43;
 }
 
+/* Lista no ordenada del bloque izquierdo */
 .bloque-izquierdo ul {
     list-style-type: none;
     margin-bottom: 2rem;
 }
 
+/* Elementos de la lista del bloque izquierdo */
 .bloque-izquierdo li {
     font-size: 1.1rem;
     margin: 0.5rem 0;
@@ -100,34 +110,35 @@ body {
 /* Bloque derecho (imagen) */
 .bloque-derecho {
     width: 45%;
-    height: 59.8vh; /* Ajustamos la altura de la imagen */
+    height: 59.8vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para la imagen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #D9D9D9;
     border-radius: 0 10px 10px 0;
 }
 
+/* Imagen dentro del bloque derecho */
 .bloque-derecho img {
-    width: 90%; /* Ajustamos el ancho de la imagen */
+    width: 90%;
     height: auto;
-    object-fit: contain; /* Aseguramos que la imagen no se distorsione */
+    object-fit: contain;
     border-radius: 10px;
 }
 
 
+/* ===================
+   PAGINA LOGIN
+   ===================*/
 
-
-/* PAGINA LOGIN */
-/* ==================
-        LOGIN
-=====================*/
+/* Contenedor principal del login, flex horizontal */
 .contenedor-login {
     display: flex;
     overflow-y: hidden;
 }
 
+/* Bloque izquierdo del login: información y fondo */
 .bloque-info {
     width: 65%;
     display: flex;
@@ -137,6 +148,7 @@ body {
     color: white;
 }
 
+/* Grupo de párrafo del bloque info */
 .grupo-parrafo {
     margin: 10rem 10rem 0 10rem;
 }
@@ -146,12 +158,14 @@ body {
     margin-top: 1rem;
 }
 
+/* Imagen de fondo para el login */
 #fondo-login {
     width: 100%;
     height: 350px;
     object-fit: fill;
 }
 
+/* Bloque derecho del login: formulario */
 .bloque-login {
     position: relative;
     width: 35%;
@@ -163,6 +177,7 @@ body {
     flex-direction: column;
 }
 
+/* Contenedor de los elementos del formulario de login */
 .elementos-login {
     display: flex;
     flex-direction: column;
@@ -170,11 +185,15 @@ body {
     gap: 1rem;
 }
 
+
+/* Grupo de input con imagen e input alineados */
 .grupo-input {
     position: relative;
     width: 100%;
 }
 
+
+/* Input de usuario y contraseña en login */
 .grupo-input input,
 .elementos-login input {
     width: 100%;
@@ -185,6 +204,7 @@ body {
     background-color: rgba(15, 0, 230, 0.15);
 }
 
+/* Iconos dentro del grupo de input */
 .grupo-input img {
     position: absolute;
     top: 50%;
@@ -195,6 +215,7 @@ body {
     pointer-events: none;
 }
 
+/* Botón de login */
 .elementos-login button {
     width: 40%;
     height: 1.6rem;
@@ -212,7 +233,7 @@ body {
     box-shadow: 0px 5px 15px rgba(14, 59, 67, 0.3);
 }
 
-/* Notificación flotante */
+/* Mensaje flotante de login (éxito o error) */
 #mensaje-login {
     position: absolute;
     top: 20px;
@@ -227,18 +248,21 @@ body {
     animation: fadeInOut 3s ease forwards;
 }
 
+/* Mensaje de error en login */
 .mensaje-error {
     background-color: #ffe5e5;
     color: #b30000;
     border-left: 5px solid #ff4d4d;
 }
 
+/* Mensaje de éxito en login */
 .mensaje-exito {
     background-color: #e5ffe5;
     color: #006600;
     border-left: 5px solid #33cc33;
 }
 
+/* Animación para aparición y desaparición del mensaje */
 @keyframes fadeInOut {
     0%   { opacity: 0; transform: translateX(20px); }
     10%  { opacity: 1; transform: translateX(0); }
@@ -246,11 +270,11 @@ body {
     100% { opacity: 0; transform: translateX(20px); }
 }
 
-/* PAGINA DASHBOARD */
-/* ================
-        HEADER
-=====================
-*/
+/* ===================
+   PAGINA DASHBOARD
+   ===================*/
+
+/* Barra de navegación superior del dashboard */
 #nav-dashboard {
     width: 100%;
     min-height: 70px;
@@ -263,6 +287,7 @@ body {
     color: white;
 }
 
+/* Enlace de la marca en el dashboard */
 #nav-dashboard a{
     color: white;
     text-decoration: none;
@@ -271,10 +296,12 @@ body {
     padding-left: 2rem;
 }
 
+/* Span de color especial en el nombre de la marca */
 #nav-dashboard a span {
     color: #6EEB83;
 }
 
+/* Contenedor para el icono de login en el dashboard */
 .icono-login-container-dashboard {
     border-radius: 50%;
     position: relative;
@@ -289,12 +316,14 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+/* Imagen del icono de login */
 #icono-login {
     width: 33px;
     height: 33px;
     margin: 22% 0 0 25%;
 }
 
+/* Círculo verde indicador de sesión activa */
 .circulo-verde {
     position: absolute;
     width: 10px;
@@ -305,14 +334,16 @@ body {
     right: 20%;
 }
 
-/* ==================
-    MAIN DASHBOARD
-=====================
-*/
+/* ===================
+   MAIN DASHBOARD
+   ===================*/
+
+/* Main del dashboard */
 #main-dashboard {
     height:100%;
 }
 
+/* Contenedor principal del dashboard */
 #dashboard {
     max-width: 50%;
     margin: 4rem auto;
@@ -320,22 +351,26 @@ body {
     z-index: 1;
 }
 
+/* Encabezado superior del dashboard */
 .dashboard-top {
     text-align: center;
     margin-top: 2rem;
 }
 
+/* Título del dashboard */
 .dashboard-top h1 {
     font-weight: bolder;
     color: #0E3B43;
     font-size: 2rem;
 }
 
+/* Subtítulo del dashboard */
 .dashboard-top p {
     color: #0E3B43;
     font-weight: 600;
 }
 
+/* Cuadrícula con las opciones del dashboard */
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -344,6 +379,7 @@ body {
     padding: 2rem;
 }
 
+/* Item individual del dashboard */
 .dashboard-item {
     border-radius: 15px;
     padding: 1.5rem;
@@ -361,11 +397,13 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Imagen dentro de cada item del dashboard */
 .dashboard-item img {
     max-width: 80px;
     margin-bottom: 1rem;
 }
 
+/* Item movimientos ocupa dos columnas y se alinea horizontalmente */
 .movimientos {
     grid-column: 1 / 3;
     display: flex;
@@ -374,29 +412,32 @@ body {
     text-align:left;
 }
 
+/* Imagen para el item de movimientos */
 .movimientos img {
     max-width: 150px;
     margin-right: 4rem;
     margin-bottom: 0;
 }
 
+/* Título dentro de los items del dashboard */
 .dashboard-item h2 {
     color: #0E3B43;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
 
+/* Descripción dentro de los items del dashboard */
 .dashboard-item p {
     color: #0E3B43;
     font-size: 1.04rem;
     font-weight: 500;
 }
 
-/* PAGINA CATEGORIAS */
-/* ================
-        HEADER
-=====================
-*/
+/* ===================
+   PAGINA CATEGORIAS
+   ===================*/
+
+/* Barra de navegación superior de los módulos (categorías, movimientos, etc.) */
 .nav-modulos {
     display: flex;
     min-height: 70px;
@@ -407,6 +448,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* Enlaces de la barra de navegación de módulos */
 .nav-modulos a {
     color: white;
     text-decoration: none;
@@ -414,15 +456,18 @@ body {
     font-size: 1.5rem;
 }
 
+/* Span especial en nombre de la marca */
 .nav-modulos a span {
     color: #6EEB83;
 }
 
+/* Contenedor izquierdo en la barra de navegación */
 .nav-izquierda{
     display: flex;
     align-items: center;
 }
 
+/* Contenedor para el icono de volver */
 .icono-volver-container {
     position: relative;
     display: inline-block;
@@ -442,10 +487,12 @@ body {
     margin: 20% 0 0 15%;
 }
 
+/* Marca del sitio junto al icono de volver */
 .marca {
     padding-left: 1rem;
 }
 
+/* Contenedor para el icono de login en módulos */
 .icono-login-container {
     border-radius: 50%;
     position: relative;
@@ -460,10 +507,41 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+/* Ajuste de margen izquierdo para el icono de login */
 .icono-login-container {
     margin-left: 8.5rem;
 }
 
+/* Menu desplegable */
+.menu-login {
+    position: absolute;
+    top: 8%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 100;
+}
+
+.menu-login button {
+    background-color: #FF171B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-login button:hover {
+    background-color: #c30000;
+}
+
+
+/* Título central en la barra de navegación de módulos */
 .nav-titulo {
     margin-left: auto;
     margin-right: auto;
@@ -472,14 +550,16 @@ body {
 }
 
 
-/* ==================
-    MAIN CATEGORIAS
-=====================
-*/
+/* ===================
+   MAIN CATEGORIAS
+   ===================*/
+
+/* Main de la sección de categorías */
 #main-categorias {
     height:100%;
 }
 
+/* Contenedor principal de la sección de categorías */
 #categorias {
     max-width: 50%;
     margin: 4rem auto;
@@ -487,6 +567,7 @@ body {
     z-index: 1;
 }
 
+/* Bloque para agregar o editar categoría */
 .elegir-categoria {
     display: flex;
     flex-direction: column;
@@ -497,16 +578,19 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Formulario dentro del bloque de elegir categoría */
 #formulario {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
+/* Título del bloque elegir categoría */
 .elegir-categoria h2 {
     color: #0E3B43;
 }
 
+/* Etiquetas del formulario de categoría */
 .elegir-categoria label {
     color: #0E3B43;
     font-weight: 500;
@@ -514,6 +598,7 @@ body {
     padding-bottom: 0.5rem;
 }
 
+/* Input para el nombre de la categoría */
 #nombre-categoria {
     border: none;
     background-color: rgba(255, 255, 255, 0.55);
@@ -523,10 +608,12 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Contenedor para los botones de agregar y actualizar categoría */
 .botones-elegir-categoria {
     margin-top: 0.5rem;
 }
 
+/* Botón habilitado para agregar categoría */
 .btn-agregar-categoria-enabled {
     width: 90px;
     height: 35px;
@@ -538,6 +625,7 @@ body {
     margin-right: 1rem;
 }
 
+/* Botón deshabilitado para agregar categoría */
 .btn-agregar-categoria-disabled {
     width: 90px;
     height: 35px;
@@ -549,6 +637,7 @@ body {
     margin-right: 1rem;
 }
 
+/* Botón habilitado para actualizar categoría */
 .btn-actualizar-categoria-enabled {
     display: inline;
     width: 90px;
@@ -560,10 +649,12 @@ body {
     background-color: #064789;
 }
 
+/* Botón deshabilitado para actualizar categoría (oculto) */
 .btn-actualizar-categoria-disabled {
     display: none;
 }
 
+/* Contenedor para la lista de categorías */
 .lista-categorias {
     display: flex;
     flex-direction: column;
@@ -575,40 +666,25 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Contenedor de tarjetas de categorías */
 .tarjetas-categorias {
     width: 100%;
     margin-top: 2rem;
     gap: 20px;
 }
 
-/* .tarjeta {
-    background: rgba(255, 255, 255, 0.7);
-    border-left: 6px solid #064789;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-} */
-
+/* Tarjeta individual de categoría */
 .tarjeta {
     background: rgba(255, 255, 255, 0);
     border-left: 6px solid #064789;
     padding: 15px;
 }
 
-/* .tarjeta {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    padding: 15px;
-} */
-
 .tarjeta button {
     margin-top: 1rem;
 }
 
+/* Botón habilitado para eliminar categoría */
 .btn-eliminar-categoria-enabled {
     width: 70px;
     height: 35px;
@@ -620,6 +696,7 @@ body {
     margin-right: 1rem;
 }
 
+/* Botón deshabilitado para eliminar categoría */
 .btn-eliminar-categoria-disabled {
     width: 70px;
     height: 35px;
@@ -631,6 +708,7 @@ body {
     margin-right: 1rem;
 }
 
+/* Botón para editar categoría */
 .btn-editar-categoria {
     width: 70px;
     height: 35px;
@@ -642,15 +720,17 @@ body {
     margin-right: 1rem;
 }
 
-/* PAGINA MOVIMIENTOS */
-/* ==================
-    MAIN MOVIMIENTOS
-=====================
-*/
+
+/* ===================
+   PAGINA MOVIMIENTOS
+   ===================*/
+
+/* Main de la sección de movimientos */
 #main-movimientos {
     height:100%;
 }
 
+/* Contenedor principal de la sección de movimientos */
 #movimientos {
     max-width: 50%;
     margin: 4rem auto;
@@ -658,6 +738,7 @@ body {
     z-index: 1;
 }
 
+/* Bloque para agregar o editar un movimiento */
 .elegir-movimientos {
     display: flex;
     flex-direction: column;
@@ -668,22 +749,26 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Formulario dentro del bloque de movimientos */
 #formulario-movimientos {
     display: flex;
     flex-direction: column;
 }
 
+/* Título del bloque de movimientos */
 .elegir-movimientos h2 {
     margin-bottom: 2rem;
     color: #0E3B43;
 }
 
+/* Etiquetas del formulario de movimientos */
 .elegir-movimientos label {
     color: #0E3B43;
     font-weight: 500;
     padding-bottom: 0.5rem;
 }
 
+/* Input para los campos de movimientos */
 .input-movimiento {
     border: none;
     background-color: rgba(255, 255, 255, 0.55);
@@ -693,6 +778,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Select para los campos de movimientos */
 .input-movimiento-opcion {
     border: none;
     background-color: rgba(0, 0, 0, 0.15);
@@ -702,6 +788,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Botón para guardar movimiento */
 #btn-guardar-movimiento {
     width: 200px;
     height: 35px;
@@ -713,6 +800,7 @@ body {
     background-color: #60993E;
 }
 
+/* Contenedor para la lista de movimientos */
 .lista-movimientos {
     display: flex;
     height: auto;
@@ -726,6 +814,7 @@ body {
     overflow-x: auto;
 }
 
+/* Contenedor de filtros para la lista de movimientos */
 .filtros {
     display: flex;
     flex-direction: column;
@@ -733,6 +822,7 @@ body {
     margin-bottom: 3rem;
 }
 
+/* Etiquetas de los filtros */
 .filtros label {
     color: #0E3B43;
     font-weight: 500;
@@ -746,6 +836,7 @@ body {
     font-size: 1.4rem;
 }
 
+/* Input tipo fecha en los filtros */
 .date_filtros {
     border: none;
     background-color: rgba(255, 255, 255, 0.55);
@@ -755,6 +846,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Botón para limpiar filtros */
 #btn-limpiar-filtros {
     width: 90px;
     height: 35px;
@@ -767,6 +859,7 @@ body {
     align-self: center;
 }
 
+/* Tabla de movimientos */
 #tabla-movimientos {
     table-layout: fixed;
     width: 100%;
@@ -774,11 +867,13 @@ body {
     border-collapse: collapse;
 }
 
+/* Encabezado de la tabla de movimientos */
 #tabla-movimientos thead {
     background-color: #0E3B43;
     color: white;
 }
 
+/* Primera columna de la tabla de movimientos */
 #tabla-movimientos th:nth-child(1),
 #tabla-movimientos td:nth-child(1) {
     width: 40px;
@@ -790,6 +885,7 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Botón para eliminar movimiento */
 .btn-eliminar-movimiento {
     width: 70px;
     height: 35px;
@@ -801,6 +897,7 @@ body {
     margin-right: 1rem;
 }
 
+/* Botón para editar movimiento */
 .btn-editar-movimiento {
     width: 70px;
     height: 35px;
@@ -812,6 +909,7 @@ body {
     margin-right: 1rem;
 }
 
+/* Fondo decorativo invertido para movimientos */
 .fondo-movimientos-2 {
     position: absolute;
     top: 100%;
@@ -823,11 +921,12 @@ body {
     transform: scaleY(-1);
 }
 
-/* PAGINA REPORTES */
-/* ==================
-    MAIN REPORTES
-=====================
-*/
+
+/* ===================
+   PAGINA REPORTES
+   ===================*/
+
+/* Grid principal de tarjetas de reportes */
 .contenedor-grid-reportes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -835,6 +934,7 @@ body {
     gap: 1.5rem;
 }
 
+/* Tarjeta individual de reporte */
 .tarjetas-reportes {
     border-radius: 15px;
     padding: 3rem;
@@ -845,19 +945,23 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Título de la tarjeta de reporte */
 .tarjetas-reportes h2 {
     color: #0E3B43;
     font-size: 1.3rem;
 }
 
+/* Párrafo en la tarjeta de reporte */
 .tarjetas-reportes p {
     padding-top: 1rem;
 }
 
+/* Main de reportes */
 #main-reportes {
     height: 100%;
 }
 
+/* Contenedor principal de reportes */
 #reportes {
     max-width: 50%;
     margin: 4rem auto;
@@ -865,27 +969,37 @@ body {
     z-index: 1;
 }
 
+/* ===================
+   MEDIA QUERIES
+   ===================*/
+
 @media (max-width: 768px) {
+
+    /* Ajuste de la barra de navegación del dashboard */
     #nav-dashboard {
         justify-content: space-between;
         align-items: center;
     }
 
+    /* Ajuste del enlace de la marca */
     #nav-dashboard a{
         padding-left: 2.5rem;
         margin-left: auto;
         margin-right: auto;
     }
 
+    /* Dashboard ocupa más ancho */
     #dashboard {
         max-width: 75%;
     }
 
+    /* Título del dashboard más pequeño */
     .dashboard-top h1 {
         font-size: 1.8rem;
         margin-bottom: 1rem;
     }
 
+    /* Grid del dashboard a una columna */
     .dashboard-grid {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
@@ -893,6 +1007,7 @@ body {
         margin-top: 3rem;
     }
 
+    /* Ajustes en el item del dashboard */
     .dashboard-item {
         display: flex;
         flex-direction: column;
@@ -900,27 +1015,30 @@ body {
         align-items: center;
     }
 
+    /* Ajustes en el item de movimientos */
     .movimientos {
         grid-column: 1;
         text-align: center;
         padding: 2rem 1.5rem;
     }
 
+    /* Imagen de movimientos más pequeña */
     .movimientos img {
         max-width: 150px;
         margin-right: 0;
     }
 
-    
-
+    /* Navegación de módulos en columna */
     .nav-modulos {
         flex-direction: column;
     }
 
+    /* Contenedor izquierdo ocupa todo el ancho */
     .nav-izquierda {
         width: 100%;
     }
 
+    /* Marca centrada */
     .marca {
         margin-left: auto;
         margin-right: auto;
@@ -928,22 +1046,27 @@ body {
         padding-right: 3rem;
     }
 
+    /* Icono de login centrado */
     .icono-login-container {
         margin: 0.5rem auto 0 auto;
     }
 
+    /* Categorías ocupa más ancho */
     #categorias {
         max-width: 75%;
     }
 
+    /* Formulario de elegir categoría centrado */
     .elegir-categoria {
         text-align: center;
     }
 
+    /* Etiquetas del formulario de categoría con más espacio abajo */
     .elegir-categoria label {
         padding-bottom: 1rem;
     }
 
+    /* Botones de categoría centrados */
     .btn-agregar-categoria-enabled {
         margin: 0 auto;
     }
@@ -956,10 +1079,12 @@ body {
         margin: 0 auto;
     }
 
+    /* Movimientos ocupa más ancho */
     #movimientos {
         max-width: 75%;
     }
 
+    /* Botón de guardar movimiento más pequeño */
     #btn-guardar-movimiento {
         width: 125px;
         height: 40px;
@@ -968,10 +1093,12 @@ body {
         font-size: 0.8rem;
     }
 
+    /* Reportes ocupa más ancho */
     #reportes {
         max-width: 75%;
     }
 
+    /* Grid de reportes a una columna */
     .contenedor-grid-reportes {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr) ;

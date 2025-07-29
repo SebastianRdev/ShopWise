@@ -20,6 +20,9 @@ const filtroCategoria = document.getElementById("filtro-categoria-movimiento")
 const filtroDesde = document.getElementById("filtro-fecha-inicio")
 const filtroFin = document.getElementById("filtro-fecha-fin")
 
+const iconoLogin = document.getElementById("icono-login")
+const menuLogin = document.getElementById("menu-login")
+
 document.addEventListener("DOMContentLoaded", function () {
     pintarCategorias()
     pintarMovimientos()
@@ -239,3 +242,20 @@ async function pintarFiltros(dataFiltro) {
     }
 }
 
+iconoLogin.addEventListener("click", () => {
+    menuLogin.style.display = menuLogin.style.display === "block" ? "none" : "block"
+})
+
+// Cerrar el menú si haces clic fuera
+document.addEventListener("click", (e) => {
+    if (!iconoLogin.contains(e.target) && !menuLogin.contains(e.target)) {
+        menuLogin.style.display = "none"
+    }
+})
+
+// Acción del botón cerrar sesión
+document.getElementById("cerrar-sesion-btn").addEventListener("click", () => {
+    // Aquí haces tu lógica de logout (por ejemplo, limpiar localStorage o redirigir)
+    localStorage.clear()
+    window.location.href = "./../../index.html"
+})

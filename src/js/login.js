@@ -22,10 +22,7 @@ async function login(inputUsername, inputPassword) {
         if (userFound.password === inputPassword) {
 
             localStorage.setItem("currentUser",JSON.stringify(userFound))
-            window.location.href = "./dashboard.html" //ejemplo: dashboard |Se hara el destructor de sesion| en su js se pone: const btnLogout = document.getElementById("logout-btn")
-            //btnLogout.addEventListener("click", function () {
-            // localStorage. || buscar el codigo en el discord
-            //})
+            window.location.href = "../views/dashboard.html"
 
             mostrarMensaje(`Bienvenido, ${user.name}`, "exito");
 
@@ -52,9 +49,9 @@ function mostrarMensaje(texto, tipo) {
     // Muestra el mensaje
     mensaje.style.display = "block";
 
-    // Reinicia la animación del mensaje (hack para reiniciar animaciones CSS)
+    // Reinicia la animación del mensaje
     mensaje.style.animation = "none";
-    mensaje.offsetHeight; // fuerza el reflujo (reflow)
+    mensaje.offsetHeight;
     mensaje.style.animation = "";
 
     // Oculta el mensaje después de 2 segundos

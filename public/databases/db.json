@@ -89,6 +89,22 @@
       "importe": 2675,
       "fecha": "2025-07-28",
       "categoryId": "9193"
+    },
+    {
+      "id": "1e8f",
+      "tipo": "venta",
+      "descripcion": "PC",
+      "importe": 2000,
+      "fecha": "2025-07-28",
+      "categoryId": "m021"
+    },
+    {
+      "id": "8bff",
+      "tipo": "compra",
+      "descripcion": "Escoba",
+      "importe": 7000,
+      "fecha": "2025-07-28",
+      "categoryId": "aaba"
     }
   ],
   "reportes": []

@@ -6,6 +6,9 @@ const API_URL = "http://localhost:3000/categories"
 
 let isEditando = null
 
+const iconoLogin = document.getElementById("icono-login")
+const menuLogin = document.getElementById("menu-login")
+
 document.addEventListener("DOMContentLoaded", pintarCategorias);
 
 async function pintarCategorias() {
@@ -134,29 +137,20 @@ function deshabilitarBotones(boton, tipo) {
     }
 }
 
+iconoLogin.addEventListener("click", () => {
+    menuLogin.style.display = menuLogin.style.display === "block" ? "none" : "block"
+})
 
+// Cerrar el menú si haces clic fuera
+document.addEventListener("click", (e) => {
+    if (!iconoLogin.contains(e.target) && !menuLogin.contains(e.target)) {
+        menuLogin.style.display = "none"
+    }
+})
 
-
-
-
-
-
-
-
-
-
-// *Otra forma pero solo para deshabilitar
-// function toggleBotones(boton, tipo) {
-//     let actualizar = document.getElementById("btn-actualizar")
-//     let agregar = document.getElementById("btn-agregar")
-
-//     if (boton === "btn-actualizar-categoria") {
-//         actualizar.classList.toggle("btn-actualizar-categoria-enabled", tipo === "enabled");
-//         actualizar.classList.toggle("btn-actualizar-categoria-disabled", tipo === "disabled");
-//     }
-
-//     if (boton === "btn-agregar-categoria") {
-//         agregar.classList.toggle("btn-agregar-categoria-enabled", tipo === "enabled")
-//         agregar.classList.toggle("btn-agregar-categoria-disabled", tipo === "enabled")
-//     }
-// }
+// Acción del botón cerrar sesión
+document.getElementById("cerrar-sesion-btn").addEventListener("click", () => {
+    // Aquí haces tu lógica de logout (por ejemplo, limpiar localStorage o redirigir)
+    localStorage.clear()
+    window.location.href = "./../../index.html"
+})

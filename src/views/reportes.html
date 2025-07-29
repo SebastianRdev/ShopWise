@@ -20,6 +20,9 @@
 
     <link rel="stylesheet" href="./../../src/CSS/style.css">
 
+    <!-- Importa el script de guardian para protección/validación -->
+    <script type="module" src="./../js/guardian.js"></script>
+
     <title>Reportes y analisis | ShopWise</title>
 </head>
 <body>
@@ -38,6 +41,11 @@
             <div class="icono-login-container">
                 <img src="./../../public/icons/login.png" alt="icono de login" id="icono-login">
                 <div class="circulo-verde"></div>
+
+                <!-- Menú flotante -->
+                <div class="menu-login" id="menu-login">
+                    <button id="cerrar-sesion-btn">Cerrar sesión</button>
+                </div>
             </div>
         </nav>
 
@@ -49,35 +57,41 @@
 
             <div class="contenedor-grid-reportes" id="grid-reportes">
 
-                <article class="tarjetas-reportes" id="categoria-mas-vendida">
+                <article class="tarjetas-reportes">
                     <h2>🔝 Categoria mas vendida</h2>
-                    <p>-</p>
+
+                    <div id="categoria-mas-vendida">
+                        <p>-</p>
+                    </div>
+
                 </article>
 
-                <article class="tarjetas-reportes" id="categoria-mas-compras">
+                <article class="tarjetas-reportes">
                     <h2>🛍️ Categoria con mas compras</h2>
-                    <p>-</p>
+
+                    <div id="categoria-mas-compras">
+                        <p>-</p>
+                    </div>
+
                 </article>
 
-                <article class="tarjetas-reportes" id="producto-mas-vendido">
+                <article class="tarjetas-reportes">
                     <h2>📦 Producto mas vendido</h2>
-                    <p>-</p>
+
+                    <div id="producto-mas-vendido">
+                        <p>-</p>
+                    </div>
+
                 </article>
 
-                <article class="tarjetas-reportes" id="producto-mas-comprado">
+                <article class="tarjetas-reportes">
                     <h2>🛒 Producto mas comprado</h2>
-                    <p>-</p>
-                </article>
 
-                <!-- <article class="tarjetas-reportes" id="acumulado-ventas">
-                    <h2>Acumulado de ventas</h2>
-                    <p>-</p>
-                </article>
+                    <div id="producto-mas-comprado">
+                        <p>-</p>
+                    </div>
 
-                <article class="tarjetas-reportes" id="acumulado-compras">
-                    <h2>Acumulado de compras</h2>
-                    <p>-</p>
-                </article> -->
+                </article>
 
             </div>
 
