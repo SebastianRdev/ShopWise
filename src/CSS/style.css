@@ -926,6 +926,19 @@ body {
    PAGINA REPORTES
    ===================*/
 
+/* Main de reportes */
+#main-reportes {
+    height: 100%;
+}
+
+/* Contenedor principal de reportes */
+#reportes {
+    max-width: 50%;
+    margin: 4rem auto;
+    position: relative;
+    z-index: 1;
+}
+
 /* Grid principal de tarjetas de reportes */
 .contenedor-grid-reportes {
     display: grid;
@@ -945,6 +958,11 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.tarjetas-reportes:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
 /* Título de la tarjeta de reporte */
 .tarjetas-reportes h2 {
     color: #0E3B43;
@@ -954,20 +972,49 @@ body {
 /* Párrafo en la tarjeta de reporte */
 .tarjetas-reportes p {
     padding-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
-/* Main de reportes */
-#main-reportes {
-    height: 100%;
+.tabla-reportes {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 4rem;
+    font-size: 0.95rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Contenedor principal de reportes */
-#reportes {
-    max-width: 50%;
-    margin: 4rem auto;
-    position: relative;
-    z-index: 1;
+.tabla-reportes th,
+.tabla-reportes td {
+    padding: 12px 16px;
+    text-align: left;
 }
+
+.tabla-reportes th {
+    background-color: #f9fafb;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-reportes td {
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-reportes tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-reportes tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
 
 /* ===================
    MEDIA QUERIES

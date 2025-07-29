@@ -105,7 +105,38 @@
       "importe": 7000,
       "fecha": "2025-07-28",
       "categoryId": "aaba"
+    },
+    {
+      "id": "bca2",
+      "tipo": "venta",
+      "descripcion": "Cama",
+      "importe": 3900,
+      "fecha": "2025-06-19",
+      "categoryId": "aaba"
+    },
+    {
+      "id": "dd15",
+      "tipo": "venta",
+      "descripcion": "Cama",
+      "importe": 3900,
+      "fecha": "2025-06-17",
+      "categoryId": "aaba"
+    },
+    {
+      "id": "e15d",
+      "tipo": "venta",
+      "descripcion": "Cama",
+      "importe": 3900,
+      "fecha": "2025-06-18",
+      "categoryId": "aaba"
+    },
+    {
+      "id": "ecf3",
+      "tipo": "venta",
+      "descripcion": "Cama",
+      "importe": 3900,
+      "fecha": "2025-06-26",
+      "categoryId": "aaba"
     }
-  ],
-  "reportes": []
+  ]
 }
