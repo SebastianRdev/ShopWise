@@ -91,7 +91,6 @@ async function productoVentas() {
 
     const conteoProductoVentas = {}
 
-    // Suma los importes por cada producto vendido (descripción)
     data.forEach(rep => {
         if (conteoProductoVentas[rep.descripcion]) {
             conteoProductoVentas[rep.descripcion] += 1
@@ -100,7 +99,6 @@ async function productoVentas() {
         }
     })
 
-    // Encuentra el producto más vendido
     let productoMayorVenta = ""
     let mayorVenta = 0
 
@@ -120,7 +118,6 @@ async function productoCompras() {
 
     const conteoProductoCompra = {}
 
-    // Suma los importes por cada producto comprado (descripción)
     data.forEach(rep => {
         if (conteoProductoCompra[rep.descripcion]) {
             conteoProductoCompra[rep.descripcion] += 1
@@ -129,7 +126,6 @@ async function productoCompras() {
         }
     })
 
-    // Encuentra el producto más comprado
     let productoMayorCompra = ""
     let mayorCompra = 0
 
@@ -150,7 +146,7 @@ async function mesVenta() {
     const conteoPorMes = {}
 
     data.forEach(rep => {
-        const mes = rep.fecha.slice(0, 7) // Extrae "YYYY-MM"
+        const mes = rep.fecha.slice(0, 7)
         conteoPorMes[mes] = (conteoPorMes[mes] || 0) + 1
     })
 
@@ -174,7 +170,7 @@ async function mesCompra() {
     const conteoPorMes = {}
 
     data.forEach(rep => {
-        const mes = rep.fecha.slice(0, 7) // "YYYY-MM"
+        const mes = rep.fecha.slice(0, 7)
         conteoPorMes[mes] = (conteoPorMes[mes] || 0) + 1
     })
 
