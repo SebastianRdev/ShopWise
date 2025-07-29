@@ -9,8 +9,10 @@ let isEditando = null
 const iconoLogin = document.getElementById("icono-login")
 const menuLogin = document.getElementById("menu-login")
 
+// --- Inicialización al cargar la página (pintar las categorías) ---
 document.addEventListener("DOMContentLoaded", pintarCategorias);
 
+// --- Obtener y mostrar categorías desde la API ---
 async function pintarCategorias() {
     listaCategorias.innerHTML = ""
 
@@ -32,11 +34,13 @@ async function pintarCategorias() {
     }
 }
 
+// --- Manejar el submit del formulario para agregar o actualizar una categoría ---
 form.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const nombre = inputNombre.value.trim() // Estoy declarando el input
 
+    // Actualización de una categoría existente
     if (isEditando) {
         await fetch(`${API_URL}/${isEditando}`, {
             method: 'PUT',
@@ -48,19 +52,23 @@ form.addEventListener("submit", async function(event) {
         deshabilitarBotones("btn-agregar-categoria","enabled")
         form.reset()
         pintarCategorias()
+    // Agregar nueva categoría
     } else {
         event.target.classList.contains("btn-agregar-categoria")
         agregarCategoria()
     }
 });
 
+// --- Manejar clicks en la lista de categorías (eliminar o editar) ---
 listaCategorias.addEventListener("click", function(event) {
     event.preventDefault();
 
+    // Eliminar categoría
     if (event.target.classList.contains("btn-eliminar-categoria")) {
         const id = event.target.getAttribute("data-id");
         eliminarCategoria(id);
 
+    // Preparar edición de categoría
     } else if (event.target.classList.contains("btn-editar-categoria")) {
         const id = event.target.getAttribute("data-id"); // Tambien existe esta forma: event.target.dataset.id;
         const nombre = event.target.getAttribute("data-nombre");
@@ -70,6 +78,7 @@ listaCategorias.addEventListener("click", function(event) {
     }
 })
 
+// --- CRUD de categorías (crear, actualizar, eliminar) ---
 async function agregarCategoria() {
     const nombre = inputNombre.value.trim()
     await fetch(API_URL, {
@@ -85,7 +94,6 @@ async function agregarCategoria() {
 async function actualizarCategoria(id,nombre) {
     inputNombre.value = nombre
     isEditando = id
-    // Esto es para que el boton de actualizar en el form se de cuenta
 }
 
 async function eliminarCategoria(id) {
@@ -97,6 +105,7 @@ async function eliminarCategoria(id) {
     await pintarCategorias()
 }
 
+// --- Habilitar/deshabilitar botones según la acción ---
 function deshabilitarBotones(boton, tipo) {
     let actualizar = document.getElementById("btn-actualizar")
     let agregar = document.getElementById("btn-agregar")
@@ -137,6 +146,7 @@ function deshabilitarBotones(boton, tipo) {
     }
 }
 
+// --- Menú de usuario/Login y cierre de sesión ---
 iconoLogin.addEventListener("click", () => {
     menuLogin.style.display = menuLogin.style.display === "block" ? "none" : "block"
 })
@@ -150,7 +160,6 @@ document.addEventListener("click", (e) => {
 
 // Acción del botón cerrar sesión
 document.getElementById("cerrar-sesion-btn").addEventListener("click", () => {
-    // Aquí haces tu lógica de logout (por ejemplo, limpiar localStorage o redirigir)
     localStorage.clear()
     window.location.href = "./../../index.html"
 })

@@ -9,6 +9,7 @@ const prodMasComprado = document.getElementById("producto-mas-comprado")
 const iconoLogin = document.getElementById("icono-login")
 const menuLogin = document.getElementById("menu-login")
 
+// --- Inicialización al cargar la página --
 document.addEventListener("DOMContentLoaded", function () {
     categoriaVentas()
     categoriaCompras()
@@ -16,12 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     productoCompras()
 })
 
+// --- Cálculo y visualización de reportes por categoría y producto ---
 async function categoriaVentas() {
     const response = await fetch(`${endpointMovimientos}?tipo=venta&_embed=category`)
     const data = await response.json()
 
     const acumuladosPorCategoriaVentas = {}
 
+    // Suma los importes por cada categoría de ventas
     data.forEach(rep => {
         if (acumuladosPorCategoriaVentas[rep.category.nombre]) {
             acumuladosPorCategoriaVentas[rep.category.nombre] += rep.importe
@@ -30,6 +33,7 @@ async function categoriaVentas() {
         }
     })
 
+    // Encuentra la categoría con mayor importe de ventas
     let categoriaMayorVenta = ""
     let mayorImporteVenta = 0
 
@@ -49,6 +53,7 @@ async function categoriaCompras() {
 
     const acumuladosPorCategoriaCompra = {}
 
+    // Suma los importes por cada categoría de compras
     data.forEach(rep => {
         if (acumuladosPorCategoriaCompra[rep.category.nombre]) {
             acumuladosPorCategoriaCompra[rep.category.nombre] += rep.importe
@@ -57,6 +62,7 @@ async function categoriaCompras() {
         }
     })
 
+    // Encuentra la categoría con mayor importe de compras
     let categoriaMayorCompra = ""
     let mayorImporteCompra = 0
 
@@ -77,6 +83,7 @@ async function productoVentas() {
 
     const acumuladosPorProductoVentas = {}
 
+    // Suma los importes por cada producto vendido (descripción)
     data.forEach(rep => {
         if (acumuladosPorProductoVentas[rep.descripcion]) {
             acumuladosPorProductoVentas[rep.descripcion] += rep.importe
@@ -85,6 +92,7 @@ async function productoVentas() {
         }
     })
 
+    // Encuentra el producto más vendido
     let productoMayorVenta = ""
     let mayorImporteVenta = 0
 
@@ -104,6 +112,7 @@ async function productoCompras() {
 
     const acumuladosPorProductoCompra = {}
 
+    // Suma los importes por cada producto comprado (descripción)
     data.forEach(rep => {
         if (acumuladosPorProductoCompra[rep.descripcion]) {
             acumuladosPorProductoCompra[rep.descripcion] += rep.importe
@@ -112,6 +121,7 @@ async function productoCompras() {
         }
     })
 
+    // Encuentra el producto más comprado
     let productoMayorCompra = ""
     let mayorImporteCompra = 0
 
@@ -125,6 +135,7 @@ async function productoCompras() {
     pintarProductoCompra(productoMayorCompra,mayorImporteCompra)
 }
 
+// --- Renderizado de resultados en el DOM ---
 async function pintarCategoriaVenta(tipo,dato) {
     categMasVendida.innerHTML = ""
 
@@ -157,6 +168,7 @@ async function pintarProductoCompra(tipo,dato) {
     `
 }
 
+// --- Menú de usuario/Login y cierre de sesión ---
 iconoLogin.addEventListener("click", () => {
     menuLogin.style.display = menuLogin.style.display === "block" ? "none" : "block"
 })
@@ -170,7 +182,6 @@ document.addEventListener("click", (e) => {
 
 // Acción del botón cerrar sesión
 document.getElementById("cerrar-sesion-btn").addEventListener("click", () => {
-    // Aquí haces tu lógica de logout (por ejemplo, limpiar localStorage o redirigir)
     localStorage.clear()
     window.location.href = "./../../index.html"
 })

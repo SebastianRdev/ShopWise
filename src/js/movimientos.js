@@ -23,14 +23,18 @@ const filtroFin = document.getElementById("filtro-fecha-fin")
 const iconoLogin = document.getElementById("icono-login")
 const menuLogin = document.getElementById("menu-login")
 
+
+// --- Inicialización al cargar la página ---
 document.addEventListener("DOMContentLoaded", function () {
     pintarCategorias()
     pintarMovimientos()
 })
 
+// --- CRUD Movimientos (Crear, Editar, Eliminar) ---
 form.addEventListener("submit", async function(event) {
     event.preventDefault()
 
+    // Variable que contiene toda la informacion del movimiento
     let nuevoMovimiento = {
         tipo: inputTipo.value,
         descripcion: inputDescripcion.value,
@@ -39,6 +43,7 @@ form.addEventListener("submit", async function(event) {
         categoryId: inputCategoria.value
     }
 
+    // Editar movimiento existente
     if (isEditando) {
         await fetch (`${endpointMovimientos}/${isEditando}`, {
             method: "PUT",
@@ -55,9 +60,11 @@ form.addEventListener("submit", async function(event) {
         form.reset()
     })
 
+// Delegación de eventos en la tabla (Editar y Eliminar)
 tbody.addEventListener("click", async function(event) {
     event.preventDefault()
 
+    // Eliminar movimiento
     if (event.target.classList.contains("btn-eliminar-movimiento")) {
         const id = event.target.getAttribute("data-id");
         await fetch(`${endpointMovimientos}/${id}`, {
@@ -66,6 +73,7 @@ tbody.addEventListener("click", async function(event) {
             body: JSON.stringify()
         })
 
+    // Preparar formulario para editar movimiento
     } else if (event.target.classList.contains("btn-editar-movimiento")) {
         const id = event.target.getAttribute("data-id");
         const nombreTipo = event.target.getAttribute("data-tipo");
@@ -86,6 +94,7 @@ tbody.addEventListener("click", async function(event) {
     pintarMovimientos()
 })
 
+// --- Filtros por tipo, categoría y fechas ---
 filtroTipo.addEventListener("change", async function () {
 
     let tipoFiltrado = await fetch (`${endpointMovimientos}?tipo=${filtroTipo.value}&_embed=category`)
@@ -107,6 +116,7 @@ filtroCategoria.addEventListener("change", async function () {
 filtroDesde.addEventListener("change", filtrarPorFechas)
 filtroFin.addEventListener("change", filtrarPorFechas)
 
+// --- Botón para limpiar filtros ---
 filtros.addEventListener("click", async function(event) {
     event.preventDefault()
 
@@ -119,6 +129,7 @@ filtros.addEventListener("click", async function(event) {
     }
 })
 
+// --- Funciones de ayuda para pintar y filtrar datos ---
 async function crearMovimientos(nuevoMovimiento) {
     await fetch(endpointMovimientos, {
         method: 'POST',
@@ -128,6 +139,7 @@ async function crearMovimientos(nuevoMovimiento) {
     pintarMovimientos()
 }
 
+// Mostrar categorias
 async function pintarCategorias() {
 
     let categ = await fetch(endpointCategories)
@@ -152,6 +164,7 @@ async function pintarCategorias() {
     }
 }
 
+// Mostrar movimientos
 async function pintarMovimientos() {
     tbody.innerHTML = ""
 
@@ -189,6 +202,7 @@ async function pintarMovimientos() {
     }
 }
 
+// Filtro de las fechas
 async function filtrarPorFechas() {
     let response = await fetch(`${endpointMovimientos}?_embed=category`)
     let data = await response.json()
@@ -215,6 +229,7 @@ async function filtrarPorFechas() {
     pintarFiltros(dataFiltrada)
 }
 
+// Mostrar filtros
 async function pintarFiltros(dataFiltro) {
     tbody.innerHTML = ""
 
@@ -242,6 +257,7 @@ async function pintarFiltros(dataFiltro) {
     }
 }
 
+// --- Menú de usuario/Login y cierre de sesión ---
 iconoLogin.addEventListener("click", () => {
     menuLogin.style.display = menuLogin.style.display === "block" ? "none" : "block"
 })
@@ -255,7 +271,6 @@ document.addEventListener("click", (e) => {
 
 // Acción del botón cerrar sesión
 document.getElementById("cerrar-sesion-btn").addEventListener("click", () => {
-    // Aquí haces tu lógica de logout (por ejemplo, limpiar localStorage o redirigir)
     localStorage.clear()
     window.location.href = "./../../index.html"
 })
